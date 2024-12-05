@@ -1,0 +1,777 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.nav-buttons{
+    margin-left: 55%;
+}
+
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+h4{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h5{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h6{
+    color:aliceblue;
+}
+
+button{
+    font-size: 0.8rem;
+    font-weight: 900;
+    outline: none;
+    border: none;
+    background-color: black;
+    color:aliceblue;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s ease;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: coral;
+}
+
+.navbar{
+    font-size: 16px;
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+    top: 0;
+    left: 0;
+    box-shadow:  0 5px 10px rgba(0,0,0,1); /* nav shadow */
+}
+
+.navbar-light .navbar-nav .nav-link{
+    padding: 0 15px;
+    color: black;
+    transition: 0.4s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar i:hover,
+.navbar-light .navbar-nav .nav-link:active,
+.navbar i:hover{
+    color: coral;
+}
+
+.navbar i{
+    font-size: 1.2rem;
+    padding: 0 0.7px;
+    transition:  0.4s ease;
+    font-weight: 500;
+    cursor:pointer;
+    margin-left: 4px;
+}
+
+/* since the small-sized header design is only applicable in 
+small screens, we use the media query. Design applied will only
+be applied to screens that are 990px or smaller */
+@media only screen and (max-width:990px){
+    .nav-buttons{
+        margin: 10px;
+    }
+    .nav-buttons ul{
+        margin: 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .nav-buttons ul .fas{
+        margin: 20px 5px 10px 20px; /*top > right > bottom > left*/
+    }
+}
+
+#home{
+    background-image: url('../imgs/banner.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position-x: 120px;
+    background-position-y: 80px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#home span{
+    color: coral;
+}
+
+#new .one img{
+    width: 82%;
+    height: 82%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#new .one{
+    position: relative;
+}
+
+#new .one .details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: burlywood;
+    font-weight: bold;
+    transition:  0.4s ease;
+    opacity: 0.5;
+    background-color: rgb(1,1,1);
+    width: 100%;
+    height: 100%;
+}
+
+#new .one .details:hover{
+    background-color: rgb(134, 133, 128);
+}
+
+/* Accessing "details" of New section's 1st child "one" */
+#new .one:nth-child(1) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+}
+/* Accessing "details" of New section's 2nd child "one" */
+#new .one:nth-child(2) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+/* Accessing "details" of New section's 3rd child "one" */
+#new .one:nth-child(3) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end; 
+    text-align: end;
+}
+
+/* PRODUCT */
+
+.product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.product img{
+    transition: 0.3s all;
+
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    object-fit: cover;
+}
+
+.product:hover img{
+    opacity: 0.8;
+}
+
+.pagination a{
+    color: rgb(188, 69, 26);
+}
+
+.pagination li:hover a{
+    color: #fff;
+    background-color: coral;
+}
+
+/*btn displayed only when you hover over it*/
+.product .buy-btn{
+    background-color: #fb774b;
+    transform: translateY(35px);
+    opacity: 1;
+    transition: 0.3s all;
+    color:#fff
+}
+
+.product:hover .buy-btn{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/* keep the shop buy now buttons displayed without the hover effect */
+.shop-buy-btn {
+    text-decoration: none;
+    background-color: #fb774b; /* initial solid bg color */
+    opacity: 1;
+    color: #fff;
+    padding: 10px 20px; /* adding padding for button spacing */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+.shop-buy-btn:hover {
+    background-color: rgba(251, 119, 75, 0.7); /* Transparent orange on hover */
+    opacity: 0.9; /* reduction in opacity */
+}
+
+hr{
+    width: 30px;
+    height: 3px !important;
+    opacity: 1 !important;
+    background-color: #fb774b;
+}
+
+#search_shop p {
+    margin-top: -10px;
+}
+
+/* reduce space between hr tag & category p tag */
+#search_shop hr {
+    margin-bottom: -20px;
+}
+
+#search_shop .form-check {
+    width: 100%;
+}
+
+#search_shop .form-check-label {
+    white-space: nowrap; /* prevent text from wrapping to a new line */
+    margin-left: 5px; /* adjust space between input and label */
+}
+
+.star{
+    padding: 10px 0;
+}
+
+.star i{
+    font-size: 0.9rem;
+    color: goldenrod;
+}
+
+#banner{
+    background-image: url('../imgs/scrollview1.jpg');
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 80px; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#banner h1{
+    color: #fff;
+}
+
+#banner h4{
+    color: #fff;
+}
+
+#banner button{
+    background-color: rgb(237, 91, 38);
+}
+
+#banner button:hover{
+    background-color: black;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #535050;
+    color: #D8D8D8;
+    padding-left: 3%; 
+    font-size: 0.9rem; 
+    line-height: 1.1rem;
+}
+
+/* Ensuring the footer container is centered but slightly more to the right */
+footer .footer-content {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 80%;
+    margin-left: auto;
+    text-align: left;
+}
+
+/* Footer Header Styling */
+footer h5 {
+    color: #D8D8D8;
+    font-weight: 700;
+    font-size: 1.1rem; /* Slightly smaller font size */
+}
+
+/* List items */
+footer li {
+    padding-bottom: 2px; /* Reduces the spacing between list items */
+}
+
+/* Footer links */
+footer li a {
+    font-size: 0.8rem;
+    color: #f8f5f5fe;
+    text-decoration: none;
+}
+
+footer li a:hover {
+    color: #999999c6;
+}
+
+/* Social icons */
+footer .social-icons {
+    text-align: right;
+    display: flex;
+    gap: 5px; /* Reduces the gap between social icons */
+}
+
+footer .social-icons a {
+    color: #fff;
+    height: 35px; /* Reduces icon size */
+    width: 35px; /* Reduces icon size */
+    background-color: #535050;
+    display: inline-block;
+    text-align: center;
+    line-height: 34px; /* Adjusts to new icon height */
+    border-radius: 50%;
+    transition: 0.3s ease;
+    margin: 0 3px; /* Reduces space around icons */
+}
+
+footer .social-icons a:hover {
+    color: white;
+    background-color: rgb(27, 137, 165);
+}
+
+/* Copyright text */
+footer .copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .copyright p {
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    padding: 5px 0; /* Reduces space around the text */
+}
+
+/* Footer images and logos */
+footer .copyright img {
+    width: 50%;
+    text-align: left;
+    margin-right: auto;
+}
+
+/* Footer logo */
+.footer-logo {
+    width: 35px;
+    height: 35px;
+}
+
+/* Footer row adjustments */
+footer .row {
+    justify-content: flex-end;
+}
+
+.logo{
+    width: 40px;
+    height: 40px;
+}
+
+.navbar .brand{
+    color: black;
+    margin: 3px 5px;
+    font-size: 1.7rem;
+}
+
+.pb-2-ig .pb-2-t .pb-2-fb{
+    width: 6px;
+    height: 6px;
+}
+
+/* single_product.html - small images */
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+/* single-product.html - Input design */
+.single-product input{    
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* single_product.html - Remove Input blue border */
+.single-product input:focus{    
+    outline: none;
+}
+
+/* single_product.html - Change btn colour */
+.single-product .buy-btn{
+    background-color: #fb774b;
+    opacity: 1;
+    transition:  0.4s all;
+}
+
+/* single_product.html - Hover effect for btn */
+.single-product .buy-btn:hover{
+    background-color: #222222;
+}
+
+.justify-text{
+    text-align: justify; 
+    display: block;
+}
+
+/* CART */
+
+.cart {
+    padding: 40px; 
+    max-width: 1000px; /* set max-width to prevent it from stretching too wide */
+    margin: 0 auto; /* centers cart section */
+    box-sizing: border-box; /* ensuring padding is included in the width */
+}
+
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart .product-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart th {
+    text-align: left;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #fb774b;
+}
+
+.cart td {
+    padding: 10px 20px;
+}
+
+.cart td img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.cart td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+.cart td a {
+    color: #fb774b;
+}
+
+.cart .remove-btn {
+    color: #fb774b;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: white;
+    border: none;
+    width: 100%;
+    text-align: start;
+}
+
+.cart .edit-btn {
+    color: #fb774b;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: white;
+    border: none;
+}
+
+.cart .product-info p {
+    margin: 3px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px; /* Adds space above the total */
+}
+
+.cart-total table {
+    width: 100%;
+    max-width: 390px;
+    border-top: 5px solid #fb774b;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+/* Checkout container and button */
+.checkout-cart-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.checkout-btn {
+    background-color: #fb774b;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #fbb54b;
+}
+
+/* LOGIN */
+
+#login-form{
+    width: 60%;
+    margin: 5px auto; /* Center the Login form */
+    text-align: center;
+    padding: 20px;
+    margin-top: -30px;
+}
+
+#login-form input{
+    width: 50%;
+    margin: 5px auto;
+}
+
+#login-form #login-btn{
+    background-color: #fb774b;
+    color: #fff;
+} 
+
+#login-form #register-url{
+    color: #fb774b;
+    font-weight: bold;
+}
+
+/* REGISTER */
+
+#register-form{
+    width: 50%;
+    margin: 5px auto; /* Center the Registration form */
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #fb774b;
+}
+
+#register-form input{
+    width: 50%;
+    margin: 5px auto;
+}
+
+#register-form #register-btn{
+    background-color: #fb774b;
+    color: #fff;
+}
+
+#register-form #login-url{
+    color: #fb774b;
+    font-weight: bold;
+}
+
+/* ACCOUNT */
+
+#account-form{
+    width: 50%;
+    margin: 35px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#account-form input{
+    margin: 5px auto;
+}
+
+#account-form #change-pass-btn{
+    color: #fff;
+    background-color: #fb774b;
+}
+
+.account-info #orders-btn, #logout-btn{
+    color: #fb774b;
+    text-decoration: none;
+}
+
+/* ORDERS */
+
+.orders table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders .product-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.orders th{
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #fb774b;
+    text-align: left;
+}
+
+/* product & date placed on left & right side */
+/* .orders th:nth-child(2){
+    text-align: right;
+} */
+
+.orders td{
+    padding: 10px 20px;
+    text-align: center; 
+}
+
+.orders td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+#orders .order-details-btn
+{
+    color: #fff;
+    background-color: #fb774b;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    width: 67%; 
+    display: inline-block; 
+    text-align: center;
+}
+
+/* CHECKOUT */
+
+.checkout-container {
+    max-width: 600px; 
+    margin: 0 auto;   /* center the container */
+}
+
+#checkout-form .checkout-small-element {
+    display: inline-block;
+    width: 100%; /* set input elements to full width */
+    margin: 10px auto;
+}
+
+#checkout-form .checkout-large-element {
+    width: 100%; /* set address field to full width */
+}
+
+#checkout-form .checkout-small-element label,
+#checkout-form .checkout-large-element label {
+    display: block; /* make label occupy full width of its container */
+    text-align: left;
+    margin-bottom: 5px; 
+}
+
+#checkout-form .checkout-btn-container {
+    text-align: right; 
+    margin-top: 20px; 
+}
+
+#checkout-form #checkout-btn {
+    color: #fff;
+    background-color: #fb774b;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#checkout-form #checkout-btn:hover {
+    background-color: #ed5725;
+}
+
+/* CONTACT */
+
+#contact span{
+    color: #fb774b;
+}
+
+/* SEARCH PRODUCTS */
+
+#search_shop {
+    float: left;
+    position: fixed; /* keeps search products section fixed on the left */
+    width: 200px;    /* defines a fixed width */
+    z-index: 1000;   /* stays on top of other content */
+    bottom: -35px;
+}
+
+/* OUR PRODUCTS */
+
+#featured_shop {
+    text-align: center;
+    margin-left: 220px;   /* added space on the left to accommodate fixed search bar */
+}
+
+#featured_shop hr {
+    border: none;
+    height: 3px !important; 
+    opacity: 1 !important;
+    background-color: #fb774b; 
+    width: 30px; 
+    margin: 0 auto; /* center the streak */
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+/* CART QUANTITY (header.php) */
+
+.cart-quantity{
+    background-color: #fb774b;
+    color: #fff;
+    padding: 4px 6px;
+    border-radius: 50%;
+    margin: -4px;
+    font-size: 1rem;
+}
