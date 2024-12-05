@@ -15,5 +15,5 @@
 
 7 - Admin credentials: 
 	Admin 1: email - admin1@gmail.com & password - alice123
-   	Admin 2: email - admin2@gmail.com & password - aaron123
+ 	Admin 2: email - admin2@gmail.com & password - aaron123
 
