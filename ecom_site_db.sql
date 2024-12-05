@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Dec 05, 2024 at 12:08 PM
+-- Generation Time: Dec 05, 2024 at 12:39 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,7 +64,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_cost`, `order_status`, `user_id`, `user_phone`, `user_city`, `user_address`, `order_date`) VALUES
-(1, 25.00, 'paid', 1, 778575377, 'Colombo', 'A7, 345/8, Flower Road, Colombo 7', '2024-12-05 12:01:42');
+(1, 25.00, 'paid', 1, 778575377, 'Colombo', 'A7, 345/8, Flower Road, Colombo 7', '2024-12-05 12:01:42'),
+(2, 40.00, 'paid', 2, 775589412, 'Colombo', 'C 77, 32/4, Richmond Towers, Colombo 5', '2024-12-05 12:23:40'),
+(3, 50.00, 'paid', 7, 771738567, 'Colombo', 'A77, 3/1, Blue Plaza, Colombo 7', '2024-12-05 12:27:35');
 
 -- --------------------------------------------------------
 
@@ -89,7 +91,9 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`item_id`, `order_id`, `product_id`, `product_name`, `product_image`, `product_price`, `product_quantity`, `user_id`, `order_date`) VALUES
-(1, 1, '3', 'Nike Workout Top', 'featured4.jpg', 25.00, 1, 1, '2024-12-05 12:01:42');
+(1, 1, '3', 'Nike Workout Top', 'featured4.jpg', 25.00, 1, 1, '2024-12-05 12:01:42'),
+(2, 2, '4', 'Floral Sunfire Dress', 'Clothes1.jpg', 40.00, 1, 2, '2024-12-05 12:23:40'),
+(3, 3, '3', 'Nike Workout Top', 'featured4.jpg', 25.00, 2, 7, '2024-12-05 12:27:35');
 
 -- --------------------------------------------------------
 
@@ -110,7 +114,9 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`payment_id`, `order_id`, `user_id`, `details_id`, `payment_date`) VALUES
-(1, 1, 1, '3X901050VR4967409', '2024-12-05 12:01:58');
+(1, 1, 1, '3X901050VR4967409', '2024-12-05 12:01:58'),
+(2, 2, 2, '4FE31707NV8639103', '2024-12-05 12:24:40'),
+(3, 3, 7, '5DT07971R4156913H', '2024-12-05 12:28:15');
 
 -- --------------------------------------------------------
 
@@ -158,7 +164,8 @@ INSERT INTO `products` (`product_id`, `product_area`, `product_name`, `product_c
 (18, 'Tops (Women)', 'Ellesse Crop Top', 'tops', 'Limited edition cotton crop top in the colour black', 'featured6.jpg', 'featured6.jpg', 'featured6.jpg', 'featured6.jpg', 20.00, 0, 'black'),
 (19, 'Tops (Women)', 'Riders Casual Cotton T-shirt', 'tops', 'Riders Casual Cotton T-shirt for Summer', 'featured7.jpg', 'featured7.jpg', 'featured7.jpg', 'featured7.jpg', 20.00, 0, 'off-white'),
 (20, 'Tops (Women)', 'Zara Skinny Crop Top', 'tops', 'Zara Skinny Crop Top for the summer', 'featured8.jpg', 'featured8.jpg', 'featured8.jpg', 'featured8.jpg', 15.00, 0, 'white with pink details'),
-(21, 'Bags (Women)', 'Birkin Bag', 'bags', 'Premium Birkin Hand Bag in Leather', 'bag1_1.jpg', 'bag1_2.jpg', 'bag1_3.jpg', 'bag1_4.jpg', 180.00, 0, 'blue, red, black, grey');
+(21, 'Bags (Women)', 'Birkin Bag', 'bags', 'Premium Birkin Hand Bag in Leather', 'bag1_1.jpg', 'bag1_2.jpg', 'bag1_3.jpg', 'bag1_4.jpg', 180.00, 0, 'blue, red, black, grey'),
+(22, 'Bags (Women)', 'Allure bag', 'bags', 'Limited edition Allure bag for the summer', 'bag1_5.jpg', 'bag1_5.jpg', 'bag1_6.jpg', 'bag1_6.jpg', 32.00, 5, 'pink and black');
 
 -- --------------------------------------------------------
 
@@ -183,7 +190,8 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`) VALU
 (3, 'brad', 'brad@gmail.com', '$2y$10$My6H6OWfSPt7./M58lUvzOspMcXFrN6sUR8p01xl/yfL4VGiTUkEW'),
 (4, 'mary', 'mary@gmail.com', '$2y$10$4Ct7pe62SB4gjhpXSrVOiOE2UbXNGOBEUjiYFeYq5/N5zX.7zqzKO'),
 (5, 'kevin', 'kevin@gmail.com', '$2y$10$U5uJrhEdtzloEtCQLMVzw.n/9mTVk6EPoVEkeQkafBqMDUa8F2Zva'),
-(6, 'kaya', 'kaya@gmail.com', '$2y$10$NUji2/YcN7pfUHOe4zCfkOvWkyRPzSjDcAXcA1xT9r6y62Rn/O9rS');
+(6, 'kaya', 'kaya@gmail.com', '$2y$10$NUji2/YcN7pfUHOe4zCfkOvWkyRPzSjDcAXcA1xT9r6y62Rn/O9rS'),
+(7, 'becky', 'becky@gmail.com', '$2y$10$s0A413oY2m.cU3E.MQtxteh3w8zOSWc1aKoaG4aMOLwq4jW10tiBW');
 
 --
 -- Indexes for dumped tables
@@ -240,31 +248,31 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
